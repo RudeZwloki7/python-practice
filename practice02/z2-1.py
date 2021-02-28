@@ -14,26 +14,27 @@ DecisionTree = {
 answer = 0
 
 
-def frec(list):
-    global DecisionTree
+def frec(list, tree):
     global answer
     try:
-        all_keys = DecisionTree.keys()
+        all_keys = tree.keys()
         for index, key in all_keys:
             if list[index] == key:
-                DecisionTree = DecisionTree.get((index, key))
-                answer = DecisionTree
-        frec(list)
+                tree = tree.get((index, key))
+                answer = tree
+        frec(list, tree)
     except AttributeError:
         return
 
 
 def f21(input_list):
     global answer
-    frec(input_list)
+    tree = DecisionTree.copy()
+    frec(input_list, tree)
     a = answer
     answer = 0
     return a
 
 # print(f21(['xtend', 1975, 1962, 'ampl']))
 # print(f21(['xtend', 2001, 2016, 'ioke']))
+# print(f21(['shell', 2020, 2016,  'ioke']))
