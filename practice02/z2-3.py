@@ -18,7 +18,7 @@ def f23(table):
 
     for i in range(len(table)):
         l = table[i][1].split('|')
-        table[i][1] = '{:.0%}'.format(float(l[0]))
+        table[i][1] = '{:.0%}'.format(round(float(l[0]), 2))
         table[i].insert(2, l[1][3:6:]+'-'+l[1][6::])
 
     for i in range(len(table)):
@@ -31,7 +31,7 @@ def f23(table):
 
 
 # print(f23([
-#     ['2002.05.23', '0.189|7257199013', 'Богдан А. Мешянц'],
+#     ['2002.05.23', '0.265|7257199013', 'Богдан А. Мешянц'],
 #     [None, None, None],
 #     ['2000.05.21', '0.771|2958901359', 'Тамерлан О. Довман'],
 #     [None, None, None],
